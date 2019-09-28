@@ -30,30 +30,6 @@ export const FEED_QUERY = gql`
   }
 `;
 
-export const FEED_QUERY2 = gql`
-  query FeedQuery($first: Int, $skip: Int, $orderBy: LinkOrderByInput) {
-    feed(first: $first, skip: $skip, orderBy: $orderBy) {
-      links {
-        id
-        createdAt
-        url
-        description
-        postedBy {
-          id
-          name
-        }
-        votes {
-          id
-          user {
-            id
-          }
-        }
-      }
-      count
-    }
-  }
-`;
-
 const NEW_LINKS_SUBSCRIPTION = gql`
   subscription {
     newLink {
